@@ -27,8 +27,8 @@ const AddTopic = () => {
     })
 
     if(res.ok){
-      router.refresh()
       router.push('/')
+      router.refresh()
     }else{
       throw new Error('Failed to create a Topic')
     }
