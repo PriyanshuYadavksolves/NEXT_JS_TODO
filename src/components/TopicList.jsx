@@ -2,25 +2,18 @@ import React from 'react'
 import RemoveBtn from './RemoveBtn'
 import Link from 'next/link'
 import {HiPencilAlt} from 'react-icons/hi'
-
-const getTopics = async()=>{
-  try {
-    const res = await fetch(process.env.NEXT_PUBLIC_REST_API_ROUTE,{cache:'no-store'})
-    if(!res.ok){
-      throw new Error('error')
-    }
-
-    return res.json()
-  } catch (error) {
-    console.log(error)
-  }
-}
-
+import connectMongoDB from '../../libs/mongodb'
+import Topic from '../../models/topics'
 
 const TopicList = async() => {
-
-  const {topics} = await getTopics()
-
+  
+  await connectMongoDB()
+  let topics = await Topic.find({}).lean()
+  topics = topics.map(topic => ({
+    ...topic,
+    _id: topic._id.toString(),
+  }));
+  
   return (
     <>
     {topics.map(t=>(
