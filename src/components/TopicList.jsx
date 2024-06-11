@@ -19,12 +19,12 @@ const getTopics = async()=>{
 
 const TopicList = async() => {
 
-  const {topics} = await getTopics()
-  console.log(process.env.NEXT_PUBLIC_REST_API_ROUTE)
+  // const {topics} = await getTopics()
+  // console.log(process.env.NEXT_PUBLIC_REST_API_ROUTE)
 
   return (
     <>
-    {topics.map(t=>(
+    {/* {topics.map(t=>(
 
     <div key={t._id} className='p-4 border border-slate-300 my-3 flex justify-between gap-5 items-center'>
         <div >
@@ -39,7 +39,8 @@ const TopicList = async() => {
             </Link>
         </div>
     </div>
-        ))}
+        ))} */}
+        hello world
 
     
     </>
