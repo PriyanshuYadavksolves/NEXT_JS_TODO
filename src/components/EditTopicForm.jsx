@@ -12,7 +12,7 @@ const EditTopicForm = ({id,title,description}) => {
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
-    if(!title || !description){
+    if(!newTitle || !desc){
       alert('title and description is needed')
       return
     }
