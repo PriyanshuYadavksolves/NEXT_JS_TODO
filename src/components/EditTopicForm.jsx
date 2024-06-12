@@ -12,6 +12,10 @@ const EditTopicForm = ({id,title,description}) => {
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
+    if(!title || !description){
+      alert('title and description is needed')
+      return
+    }
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/api/topics/${id}`,{
         method:'PUT',
