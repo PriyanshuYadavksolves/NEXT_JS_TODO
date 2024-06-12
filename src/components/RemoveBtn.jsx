@@ -8,7 +8,7 @@ const RemoveBtn = ({id}) => {
   const removeTopic = async()=>{
     const confirmed = confirm("are you sure?")
     if(confirmed){
-      const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}?id=${id}`,{
+      const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/api/topics?id=${id}`,{
         method:'DELETE'
       })
       if(res.ok){

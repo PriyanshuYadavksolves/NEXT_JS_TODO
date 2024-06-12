@@ -17,7 +17,7 @@ const AddTopic = () => {
     }
 
     try {
-      const res = await fetch(process.env.NEXT_PUBLIC_REST_API_ROUTE,{
+      const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/api/topics`,{
       method:'POST',
       headers:{
         'Content-type':'application/json'

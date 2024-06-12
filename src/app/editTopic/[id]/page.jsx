@@ -2,7 +2,7 @@ import EditTopicForm from '@/components/EditTopicForm'
 
 const fetchTopicDetails = async(id)=>{
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/${id}`,{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/api/topics/${id}`,{
       cache:'no-store'
     })
 

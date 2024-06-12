@@ -13,7 +13,7 @@ const EditTopicForm = ({id,title,description}) => {
   const handleSubmit = async(e)=>{
     e.preventDefault()
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/${id}`,{
+      const res = await fetch(`${process.env.NEXT_PUBLIC_REST_API_ROUTE}/api/topics/${id}`,{
         method:'PUT',
         headers:{
           'content-type':'application/json',
