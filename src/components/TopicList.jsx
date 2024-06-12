@@ -36,7 +36,7 @@ const TopicList = async() => {
         
         <div className='flex gap-2'>
             <RemoveBtn id={t._id}/>
-            <Link href={`editTopic/${t._id}`}>
+            <Link href={`editTopic/${t._id}`} aria-label={`Edit topic ${t.title}`}>
                 <HiPencilAlt size={24}/>
             </Link>
         </div>

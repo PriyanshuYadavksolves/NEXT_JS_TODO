@@ -17,7 +17,7 @@ const RemoveBtn = ({id}) => {
     }
   }
   return (
-    <button className="text-red-400">
+    <button className="text-red-400" aria-label="Remove topic">
       <HiOutlineTrash size={24} onClick={removeTopic} />
     </button>
   );
