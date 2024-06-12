@@ -18,6 +18,9 @@ const getTopics = async()=>{
 
 
 const TopicList = async() => {
+  if(!process.env.NEXT_PUBLIC_REST_API_ROUTE){
+    return null
+  }
 
   const {topics} = await getTopics()
 
